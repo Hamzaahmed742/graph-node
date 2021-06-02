@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Brastilava
@@ -16,8 +16,8 @@ dataSources:
         - OwnerSet
       abis:
         - name: Brastilava
-          file: ./abis/Brastilava.json
+          file: Brastilava/abis/Brastilava.json
       eventHandlers:
         - event: OwnerSet(address,address)
           handler: handleOwnerSet
-      file: ./src/mapping.ts
+      file: Brastilava/Brastilava.wasm
