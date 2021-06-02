@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Brastilava
+    network: mainnet
+    source:
+      address: "0x16d470df3f8339132e8832c1cbbbdc3ca89a5a4c"
+      abi: Brastilava
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.2
+      language: wasm/assemblyscript
+      entities:
+        - OwnerSet
+      abis:
+        - name: Brastilava
+          file: ./abis/Brastilava.json
+      eventHandlers:
+        - event: OwnerSet(address,address)
+          handler: handleOwnerSet
+      file: ./src/mapping.ts
